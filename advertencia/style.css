@@ -1,0 +1,53 @@
+/* Estilo para o formulário de Advertência */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #E0E0E0;
+    color: #000;
+    margin: 0;
+    font-size: 12pt;
+}
+
+#painel-controle {
+    background-color: #f8f8f8; padding: 15px; border-bottom: 1px solid #ccc;
+}
+#painel-controle h1 { font-size: 1.2em; text-align: center; margin: 0 0 15px 0; }
+.controles-container { display: flex; justify-content: center; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+.controle-item { display: flex; flex-direction: column; }
+.controle-item label { margin-bottom: 5px; font-size: 0.9em; }
+.controle-item select, .controle-item input, .controle-item textarea, #painel-controle button { padding: 8px; font-size: 1em; border: 1px solid #ccc; border-radius: 4px; }
+.controle-item textarea { resize: vertical; }
+
+#ficha-container {
+    width: 210mm; min-height: 297mm; margin: 20px auto; background-color: #fff;
+    padding: 20mm; border: 1px solid #000; box-shadow: 0 0 10px rgba(0,0,0,0.5); box-sizing: border-box;
+}
+
+.titulo-principal { text-align: center; font-size: 1.4em; font-weight: bold; margin-bottom: 30px; }
+.info-funcionario-advertencia { margin-bottom: 30px; line-height: 1.6; }
+.info-funcionario-advertencia p { margin: 8px 0; }
+
+.corpo-texto { text-align: justify; line-height: 1.8; }
+.corpo-texto p { margin: 20px 0; }
+.campo-dinamico { font-weight: bold; }
+
+.data-final { text-align: center; margin-top: 50px; margin-bottom: 70px; }
+
+.assinaturas-container { display: flex; justify-content: space-around; text-align: center; margin-bottom: 70px; }
+.assinatura-item { width: 45%; }
+.linha-assinatura { border-top: 1px solid #000; width: 100%; margin: 0 auto 5px auto; }
+.nome-assinatura-empregado { font-size: 0.9em; font-weight: bold; }
+
+.testemunhas { border-top: 1px solid #ccc; padding-top: 20px; font-size: 0.9em; line-height: 2.2; }
+.testemunhas p { margin: 8px 0; }
+
+@media print {
+    body { background-color: #fff; margin: 0; }
+    #painel-controle { display: none; }
+    #ficha-container {
+        width: 100%; min-height: auto; margin: 0; padding: 15mm;
+        border: none; box-shadow: none; font-size: 11pt;
+    }
+    .corpo-texto { line-height: 1.6; }
+    .data-final { margin-top: 40px; margin-bottom: 60px; }
+    .assinaturas-container { margin-bottom: 60px; }
+}

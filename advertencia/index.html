@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Aviso de Advertência</title>
+    <link rel="stylesheet" href="../epi/style.css"> 
+</head>
+<body>
+
+    <div id="painel-controle">
+        <h1>Gerador de Aviso de Advertência</h1>
+        <div class="controles-container">
+            <div class="controle-item">
+                <label for="selecionarFuncionario">Funcionário:</label>
+                <select id="selecionarFuncionario"><option value="">-- Selecione --</option></select>
+            </div>
+            <div class="controle-item">
+                <label for="dataOcorrenciaInput">Data da Ocorrência:</label>
+                <input type="date" id="dataOcorrenciaInput">
+            </div>
+            <div class="controle-item">
+                <label for="horaOcorrenciaInput">Hora da Ocorrência:</label>
+                <input type="time" id="horaOcorrenciaInput">
+            </div>
+            <div class="controle-item" style="flex-grow: 1;">
+                <label for="motivoInput">Motivo da Advertência (descreva o ato):</label>
+                <textarea id="motivoInput" rows="2" placeholder="Ex: ausentar-se do seu posto de trabalho sem justificativa..."></textarea>
+            </div>
+            <button onclick="window.print()">Imprimir Advertência</button>
+        </div>
+    </div>
+
+    <div id="ficha-container">
+        <h2 class="titulo-principal">ADVERTÊNCIA DISCIPLINAR</h2>
+        
+        <div class="info-funcionario-advertencia">
+            <p><strong>Ao Sr.(a):</strong> <span id="nomeFuncionario"></span></p>
+            <p><strong>CPF Nº:</strong> <span id="cpfFuncionario"></span></p>
+            <p><strong>Cargo:</strong> <span id="cargoFuncionario"></span></p>
+        </div>
+
+        <div class="corpo-texto">
+            <p>Valemo-nos da presente para aplicar-lhe a pena de <strong>ADVERTÊNCIA DISCIPLINAR</strong>, pelo ato de indisciplina e falta de cumprimento de suas obrigações contratuais ao <span id="motivoAdvertencia" class="campo-dinamico">[MOTIVO DA ADVERTÊNCIA]</span>, ocorrido no dia <span id="dataOcorrencia" class="campo-dinamico">[DATA]</span>, às <span id="horaOcorrencia" class="campo-dinamico">[HORA]</span> horas, infringindo assim as normas e procedimentos da empresa.</p>
+            <p>Esclarecemos que a reincidência de tal procedimento, ou o cometimento de qualquer outra falta de natureza grave, passível de punição, poderá ensejar a aplicação de penalidades mais severas, como a suspensão disciplinar e/ou a rescisão do contrato de trabalho por justa causa, nos termos do Art. 482 da CLT.</p>
+            <p>Solicitamos que adeque sua conduta às normas e diretrizes da empresa.</p>
+        </div>
+
+        <p id="dataPorExtenso" class="data-final"></p>
+
+        <div class="assinaturas-container">
+            <div class="assinatura-item">
+                <p class="linha-assinatura"></p>
+                <p>EMPRESA</p>
+            </div>
+            <div class="assinatura-item">
+                <p class="linha-assinatura"></p>
+                <p>Ciente do Empregado(a)</p>
+                <p id="nomeAssinatura" class="nome-assinatura-empregado"></p>
+            </div>
+        </div>
+        
+        <div class="testemunhas">
+            <p><strong>Testemunhas:</strong></p>
+            <p>1. Nome: _________________________________________ CPF: _________________________</p>
+            <p>2. Nome: _________________________________________ CPF: _________________________</p>
+        </div>
+    </div>
+
+    <script src="../dados/dados.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
