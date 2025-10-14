@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de Controle de EPI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="painel-controle">
+        <h1>Gerador de Ficha de EPI</h1>
+        <div class="controles-container">
+            <div class="controle-item">
+                <label for="selecionarFuncionario">Selecione o Funcionário:</label>
+                <select id="selecionarFuncionario">
+                    <option value="">-- Escolha um funcionário --</option>
+                </select>
+            </div>
+            <div class="controle-item">
+                <label for="selecionarData">Selecione a Data de Entrega:</label>
+                <input type="date" id="selecionarData">
+            </div>
+            <button onclick="window.print()">Imprimir Ficha</button>
+        </div>
+    </div>
+
+    <div id="ficha-container">
+        <header class="ficha-header">
+            <h1>Ficha de Controle de Equipamento de Proteção Individual (EPI)</h1>
+            <p>Para fins de atendimento à NR-6, da Portaria Nº 3214/78, com nova redação dada pela Portaria 06/83 do Ministério do Trabalho em seus itens 6.6 e 6.7.</p>
+        </header>
+
+        <section class="info-empresa">
+            <div class="campo-info full-width">
+                <label>Empresa:</label>
+                <span>AILIN LOCAÇÕES DE CONTÊINERES LTDA.</span>
+            </div>
+        </section>
+
+        <section class="info-funcionario">
+            <div class="campo-info nome">
+                <label>Nome do Funcionário:</label>
+                <span id="nomeFuncionario"></span>
+            </div>
+            <div class="campo-info cpf">
+                <label>CPF:</label>
+                <span id="cpfFuncionario"></span>
+            </div>
+            <div class="campo-info funcao">
+                <label>Função:</label>
+                <span id="cargoFuncionario"></span>
+            </div>
+            <div class="campo-info setor">
+                <label>Setor:</label>
+                <span id="setorFuncionario"></span>
+            </div>
+            <div class="campo-info admissao">
+                <label>Data de Admissão:</label>
+                <span id="admissaoFuncionario"></span>
+            </div>
+        </section>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Data de Entrega</th>
+                    <th>Nome do Equipamento</th>
+                    <th>C.A.</th>
+                    <th>Recebimento / Assinatura</th>
+                </tr>
+            </thead>
+            <tbody id="corpoTabelaEPI">
+            </tbody>
+        </table>
+
+        <section class="termo-compromisso">
+            <h2>Termo de Compromisso</h2>
+            <p>Eu, abaixo assinado, comprometo-me a usar conservar limpo(s) e zelar por todo(s) o(s) equipamento(s) que me for (em) entregue(s) gratuitamente pela companhia e devolve-lo(s) quando da necessidade da troca por outro novo ou por qualquer motivo, me desligar da mesma.</p>
+            <p>Concordo também, que esse(s) equipamento(s) será (ão) exclusivamente para meu uso dentro da companhia, comprometendo-me reembolsa-la em qualquer ocasião pelo valor de custo do(s) equipamento(s), pela(s) perda(s) do(s) mesmo(s) ou sua danificação por minha culpa.</p>
+            <p>Todos os EPI acima mencionados estão à disposição para uso, onde me comprometo a comunicar o empregador sobre danos ou a falta dele.</p>
+            <p>Declaro, ainda que estou ciente de que a não utilização dos EPI’s (equipamento de proteção individual), constituirá em falta grave sujeita a punições disciplinares de acordo com a CLT (consolidação das leis do trabalho), e o regulamento interno da empresa.</p>
+        </section>
+        
+        <footer class="assinatura">
+            <p id="dataPorExtenso"></p>
+            <p class="linha-assinatura"></p>
+            <p id="nomeAssinatura"></p>
+        </footer>
+    </div>
+
+    <script src="../dados/dados.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
