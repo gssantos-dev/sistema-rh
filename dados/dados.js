@@ -112,5 +112,12 @@ const funcionarios = [
     departamento: "Transporte",
     cpf: "268.553.008-80",
     dataAdmissao: "27/06/2022"
+  },
+  { id: 14,
+    nome: "Kayque Ferreira Correard Prado",
+    cargo: "Montador de Contêiner",
+    departamento: "Transporte",
+    cpf: "534.527.058-97",
+    dataAdmissao: "28/04/2025"
   }
 ];
