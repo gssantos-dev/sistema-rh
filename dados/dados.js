@@ -119,5 +119,12 @@ const funcionarios = [
     departamento: "Transporte",
     cpf: "534.527.058-97",
     dataAdmissao: "28/04/2025"
+  },
+  { id: 15,
+    nome: "Luiz Antonio de Lima",
+    cargo: "Montador de Contêiner",
+    departamento: "Limpeza",
+    cpf: "102.285.838-61",
+    dataAdmissao: "15/07/2023"
   }
 ];
