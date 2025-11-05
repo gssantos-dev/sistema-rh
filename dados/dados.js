@@ -21,7 +21,7 @@ const funcionarios = [
   {
     id: 1,
     nome: "Anderson Hirouyki Anzai",
-    cargo: "Montador de Contêiner",
+    cargo: "Gerente",
     departamento: "Administração",
     cpf: "400.197.208-58",
     dataAdmissao: "02/09/2019"
@@ -29,7 +29,7 @@ const funcionarios = [
   {
     id: 2,
     nome: "Gustavo de Santana Santos",
-    cargo: "Montadora de Contêiner",
+    cargo: "Gerente",
     departamento: "Administração",
     cpf: "437.239.488-80",
     dataAdmissao: "12/05/2025"
@@ -37,7 +37,7 @@ const funcionarios = [
   {
     id: 3,
     nome: "Marcos Antonio Silva dos Santos",
-    cargo: "Montador de Contêiner",
+    cargo: "Gerente",
     departamento: "Administração",
     cpf: "005.863.258-16",
     dataAdmissao: "15/02/2021"
@@ -94,21 +94,21 @@ const funcionarios = [
   },
   { id: 11,
     nome: "André Correard Prado",
-    cargo: "Montador de Contêiner",
+    cargo: "Motorista",
     departamento: "Transporte",
     cpf: "120.571.398-08",
     dataAdmissao: "08/02/2021"
   },
   { id: 12,
     nome: "Rafael de Jesus Pereira",
-    cargo: "Montador de Contêiner",
+    cargo: "Motorista",
     departamento: "Transporte",
     cpf: "555.165.248-30",
     dataAdmissao: "01/10/2024"
   },
   { id: 13,
     nome: "William Batista Pacitti",
-    cargo: "Montador de Contêiner",
+    cargo: "Motorista",
     departamento: "Transporte",
     cpf: "268.553.008-80",
     dataAdmissao: "27/06/2022"
