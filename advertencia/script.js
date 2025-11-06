@@ -60,15 +60,21 @@ window.onload = function() {
     }
 
     // Função para popular a lista de funcionários no dropdown
-    function popularSelectFuncionarios() {
-        funcionarios.forEach(func => {
+    function popularSelect() {
+        // 1. Criamos uma cópia da lista original para não bagunçar os dados
+        // 2. Usamos .sort() para ordenar essa cópia
+        // 3. a.nome.localeCompare(b.nome) garante que a ordenação respeite acentos (Á, É, ã, etc.)
+        const funcionariosOrdenados = funcionarios.slice().sort((a, b) => a.nome.localeCompare(b.nome));
+
+        // Agora usamos a lista ordenada para criar as opções
+        funcionariosOrdenados.forEach(func => {
             const option = document.createElement('option');
             option.value = func.id;
             option.textContent = func.nome;
             selectFuncionario.appendChild(option);
         });
     }
-
+    
     // --- INICIALIZAÇÃO E EVENTOS ---
     function init() {
         popularSelectFuncionarios();
