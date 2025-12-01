@@ -78,13 +78,6 @@ const funcionarios = [
     cpf: "065.895.895-00",
     dataAdmissao: "26/09/2022"
     },
-    { id: 9,
-    nome: "Pablo Endrigo dos Santos Gomes",
-    cargo: "Montador de Contêiner",
-    departamento: "Transporte",
-    cpf: "347.585.518-63",
-    dataAdmissao: "16/06/2025"
-  },
   { id: 10,
     nome: "Vitor Angelo Carvalho da Silva",
     cargo: "Montador de Contêiner",
