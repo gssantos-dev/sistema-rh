@@ -51,11 +51,11 @@ const funcionarios = [
     dataAdmissao: "12/05/2025"
   },
   { id: 5,
-    nome: "Guilherme Yan Rocha Jacinto",
-    cargo: "Montador de Contêiner",
-    departamento: "Manutenção",
-    cpf: "451.383.988-06",
-    dataAdmissao: "07/04/2025"
+    nome: "Gustavo Franca de Jesus",
+    cargo: "Motorista",
+    departamento: "Transporte",
+    cpf: "473.679.108-09",
+    dataAdmissao: "24/11/2025"
   },
   { id: 6,
     nome: "Marcos Paulo Oliveira do Carmo",
