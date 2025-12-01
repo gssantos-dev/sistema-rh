@@ -55,7 +55,7 @@ const funcionarios = [
     cargo: "Motorista",
     departamento: "Transporte",
     cpf: "473.679.108-09",
-    dataAdmissao: "24/11/2025"
+    dataAdmissao: "01/12/2025"
   },
   { id: 6,
     nome: "Marcos Paulo Oliveira do Carmo",
