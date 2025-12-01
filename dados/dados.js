@@ -51,7 +51,7 @@ const funcionarios = [
     dataAdmissao: "12/05/2025"
   },
   { id: 5,
-    nome: "Gustavo Franca de Jesus",
+    nome: "Gustavo França de Jesus",
     cargo: "Motorista",
     departamento: "Transporte",
     cpf: "473.679.108-09",
