@@ -1,20 +1,22 @@
 // dados.js
 
 const listaDeEPIs = [
-  { nome: "PROTETOR AURICULAR", ca: "14.235" },
-  { nome: "OCULOS DE PROTECAO", ca: "11.268" },
-  { nome: "CAPACETE DE SEGURANCA", ca: "31.469" },
-  { nome: "LUVA TRICOTADA ALGODAO", ca: "31.911" },
+  { nome: "AVENTAL PARA SOLDA COM MANGA", ca: "19.348" },
+  { nome: "BOTA DE CANO LONGO DE PVC COM BIQUEIRA DE AÇO", ca: "37.750" },
   { nome: "BOTINA BICO E PALMILHA DE ACO", ca: "40.887" },
-  { nome: "MASCARA CONTRA POEIRAS", ca: "38.501" },
+  { nome: "CAPACETE DE SEGURANCA", ca: "31.469" },
+  { nome: "LUVA NITRÍLICA", ca: "40.570" },
+  { nome: "LUVA RASPA/VAUQETA CANO LONGO", ca: "25.387" },
+  { nome: "LUVA TRICOTADA ALGODAO", ca: "31.911" },
   { nome: "MACACAO CONTRA POEIRAS", ca: "4.115" },
-  { nome: "MACACAO PARA POEIRAS", ca: "38.381" },
-  { nome: "MACACAO PARA SOLDA", ca: "19.348" },
+  { nome: "MASCARA CONTRA POEIRAS", ca: "38.501" },
   { nome: "MASCARA PARA SOLDA", ca: "41.809" },
-  { nome: "LUVA PUNHO", ca: "25.387" },
-  { nome: "PROTETOR SOLAR", ca: "" }, 
+  { nome: "ÓCULOS DE AMPLA VISÃO", ca: "35.564" },
+  { nome: "OCULOS DE PROTECAO", ca: "11.268" },
   { nome: "ÓCULOS DE SOBREPOR", ca: "45.463" },
-  { nome: "ÓCULOS DE AMPLA VISÃO", ca: "35.564" }
+  { nome: "PROTETOR AURICULAR", ca: "14.235" },
+  { nome: "PROTETOR SOLAR", ca: "" },
+  { nome: "RESPIRADOR/MASCARA", ca: "38.381" },
 ];
 
 const funcionarios = [
