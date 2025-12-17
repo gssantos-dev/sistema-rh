@@ -29,8 +29,7 @@ window.onload = function() {
     // 2. Gera as linhas da tabela de EPIs com a data selecionada
     function gerarTabelaEPIs(dataString) {
         corpoTabela.innerHTML = '';
-        if (!dataString) return; // Se a data for inválida, a tabela fica vazia
-
+        if (!dataString) return;
         const [ano, mes, dia] = dataString.split('-');
         const dataFormatada = `${dia}/${mes}/${ano}`;
 
@@ -41,7 +40,7 @@ window.onload = function() {
             const celulaCA = document.createElement('td');
             const celulaAssinatura = document.createElement('td');
             
-            celulaData.textContent = dataFormatada; // <--- USA A DATA SELECIONADA
+            celulaData.textContent = dataFormatada;
             celulaNome.textContent = epi.nome;
             celulaCA.textContent = epi.ca;
             
@@ -79,7 +78,7 @@ window.onload = function() {
     // 4. FUNÇÃO MESTRE: Orquestra todas as atualizações
     function atualizarFichaCompleta() {
         const idFuncionario = parseInt(selectFuncionario.value);
-        const dataSelecionada = dataInput.value; // Pega a data no formato 'YYYY-MM-DD'
+        const dataSelecionada = dataInput.value;
 
         atualizarInfoFuncionario(idFuncionario);
         gerarTabelaEPIs(dataSelecionada);

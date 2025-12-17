@@ -16,7 +16,7 @@ const listaDeEPIs = [
   { nome: "ÓCULOS DE SOBREPOR", ca: "45.463" },
   { nome: "PROTETOR AURICULAR", ca: "14.235" },
   { nome: "PROTETOR SOLAR", ca: "" },
-  { nome: "RESPIRADOR/MASCARA", ca: "38.381" },
+  { nome: "RESPIRADOR/MASCARA 3M PARA VAPORES ORGANICOS", ca: "38.381" },
 ];
 
 const funcionarios = [

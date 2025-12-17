@@ -127,62 +127,61 @@ thead th:nth-child(4) { width: 25%; }
 }
 #nomeAssinatura { font-size: 0.9em; font-weight: 500; margin-top: 8px; }
 
-/* --- REGRAS DE IMPRESSÃO ULTRA-COMPACTAS --- */
+/* --- REGRAS DE IMPRESSÃO OTIMIZADAS PARA A4 --- */
+@page { size: A4 portrait; margin: 6mm; }
 @media print {
-    body { 
-        background-color: #fff;
-        margin: 0;
-    }
-    #painel-controle { 
-        display: none; 
-    }
-    
+    /* Página e corpo */
+    html, body { background-color: #fff; margin: 0; color: #000; }
+    #painel-controle { display: none; }
+
+    /* Container: usar largura fluida e margens pequenas para maximizar espaço */
     #ficha-container {
-        /* Reduz margens e remove elementos de tela */
-        width: 100%;
+        width: auto;
         min-height: auto;
         margin: 0;
-        padding: 8mm 10mm; /* Margens mínimas */
+        padding: 6mm; /* margens internas bem compactas */
         border: none;
         box-shadow: none;
-        
-        /* Diminui o tamanho da fonte globalmente para a impressão */
-        font-size: 9.5pt;
+        box-sizing: border-box;
+        font-size: 8.5pt; /* fonte reduzida globalmente */
+        max-height: 282mm; /* margem para cabeçalho/rodapé do navegador */
+        overflow: visible;
     }
 
-    .ficha-header {
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #000;
-    }
-    
-    .info-empresa, .info-funcionario {
-        margin-bottom: 15px;
-        border: 1px solid #ccc; /* Devolve uma borda leve para agrupar na impressão */
-    }
+    /* Cabeçalho e blocos informativos mais compactos */
+    .ficha-header { margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #000; }
+    .ficha-header h1 { font-size: 12pt; }
 
-    .campo-info { padding: 6px 8px; }
+    .info-empresa, .info-funcionario { margin-bottom: 8px; border: 1px solid #ccc; }
+    .campo-info { padding: 4px 6px; }
 
+    /* Tabela: diminuir paddings e fontes, evitar quebras internas */
+    table { width: 100%; border-collapse: collapse; font-size: 8pt; }
     th, td {
-        padding: 4px 6px; /* Células da tabela bem mais justas */
-        font-size: 8.5pt; /* Fonte menor na tabela */
+        padding: 2px 4px;
+        font-size: 8pt;
         border-bottom-color: #ddd;
     }
     th { color: #000; border-bottom-color: #999; }
-    
-    .termo-compromisso { 
-        margin-top: 15px; 
-    }
-    .termo-compromisso p {
-        line-height: 1.25; /* Linhas mais próximas */
-        margin-bottom: 5px;
-    }
-    .termo-compromisso h2 { margin-bottom: 10px; }
+    tbody tr:last-child td { border-bottom: none; }
+    thead th:nth-child(1) { width: 14%; }
+    thead th:nth-child(2) { width: 48%; }
+    thead th:nth-child(3) { width: 10%; }
+    thead th:nth-child(4) { width: 28%; }
 
-    .assinatura {
-        margin-top: 30px; /* Espaçamento bem menor */
-    }
-    #dataPorExtenso {
-        margin-bottom: 60px; /* Mantém o espaço bom para assinatura */
-    }
+    /* Evitar que uma linha seja cortada entre páginas */
+    tr, td, th { page-break-inside: avoid; }
+    table { page-break-after: auto; }
+
+    /* Termo e assinatura compactos */
+    .termo-compromisso { margin-top: 8px; }
+    .termo-compromisso p { line-height: 1.1; margin-bottom: 4px; font-size: 8pt; }
+    .termo-compromisso h2 { margin-bottom: 6px; font-size: 10pt; }
+
+    .assinatura { margin-top: 16px; text-align: center; }
+    #dataPorExtenso { margin-bottom: 18px; font-size: 8pt; }
+    .linha-assinatura { width: 220px; }
+
+    /* Forçar cores em preto para legibilidade na impressão */
+    * { color: #000 !important; background: transparent !important; }
 }
