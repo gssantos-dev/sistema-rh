@@ -128,14 +128,14 @@ thead th:nth-child(4) { width: 25%; }
 #nomeAssinatura { font-size: 0.9em; font-weight: 500; margin-top: 8px; }
 
 /* --- REGRAS DE IMPRESSÃO OTIMIZADAS PARA A4 --- */
-@page { size: A4 portrait; margin: 15mm; }
+@page { size: A4 portrait; margin: 10mm; }
 @media print {
     /* Página e corpo */
     html, body { background-color: #fff; margin: 0; color: #000; font-family: 'Roboto', Arial, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     #painel-controle { display: none; }
     ::-webkit-scrollbar { display: none; }
 
-    /* Container: Limpo e sem sombras */
+    /* Container: Limpo e sem sombras, ocupa 100% da largura disponível */
     #ficha-container {
         width: 100%;
         margin: 0;
@@ -143,32 +143,33 @@ thead th:nth-child(4) { width: 25%; }
         border: none;
         box-shadow: none;
         display: block;
+        font-size: 9pt; /* Fonte base para impressão */
     }
 
     /* Cabeçalho Profissional */
-    .ficha-header { margin-bottom: 30px; padding-bottom: 10px; border-bottom: 2px solid #333; text-align: center; }
-    .ficha-header h1 { font-size: 16pt; text-transform: uppercase; letter-spacing: 1px; margin: 0; }
-    .ficha-header p { font-size: 10pt; margin-top: 5px; color: #555; }
+    .ficha-header { margin-bottom: 20px; padding-bottom: 8px; border-bottom: 2px solid #333; text-align: center; }
+    .ficha-header h1 { font-size: 15pt; text-transform: uppercase; letter-spacing: 1px; margin: 0; }
+    .ficha-header p { font-size: 9pt; margin-top: 4px; color: #555; }
 
     /* Layout de Informações: Limpo, sem grades pesadas */
     .info-empresa, .info-funcionario {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         border: none;
         background: transparent;
         padding: 0;
     }
     .campo-info {
-        margin-bottom: 15px;
-        padding: 0 10px 0 0;
+        margin-bottom: 10px;
+        padding: 0 8px 0 0;
         border: none;
     }
     
     .campo-info.full-width { flex-basis: 100%; }
     .campo-info.nome { flex-basis: 55%; }
-    .campo-info.cpf { flex-basis: 40%; }
+    .campo-info.cpf { flex-basis: 40%; margin-right: 0; } /* Ajuste para garantir que o CPF não quebre linha */
     .campo-info.funcao { flex-basis: 40%; }
     .campo-info.setor { flex-basis: 30%; }
     .campo-info.admissao { flex-basis: 25%; }
@@ -178,14 +179,14 @@ thead th:nth-child(4) { width: 25%; }
         color: #666; font-weight: 600; margin-bottom: 3px; 
     }
     .campo-info span { 
-        display: block; font-size: 11pt; color: #000; 
+        display: block; font-size: 10pt; color: #000; 
         border-bottom: 1px solid #eee; padding-bottom: 2px; 
     }
 
     /* Tabela Minimalista */
-    table { width: 100%; border-collapse: collapse; font-size: 9pt; margin-bottom: 20px; border: none; }
+    table { width: 100%; border-collapse: collapse; font-size: 8.5pt; margin-bottom: 15px; border: none; }
     th, td {
-        padding: 8px;
+        padding: 5px;
         border-bottom: 1px solid #ddd;
     }
     th { 
@@ -205,20 +206,20 @@ thead th:nth-child(4) { width: 25%; }
     tbody td:nth-child(3) { text-align: center; }
 
     /* Termo de Compromisso */
-    .termo-compromisso { 
-        margin-top: 30px; padding: 15px; 
+    .termo-compromisso {
+        margin-top: 20px; padding: 10px;
         background-color: #f9f9f9 !important; 
         border-left: 4px solid #333; 
         page-break-inside: avoid; 
     }
-    .termo-compromisso h2 { margin: 0 0 10px 0; font-size: 10pt; text-transform: uppercase; }
-    .termo-compromisso p { line-height: 1.5; margin: 0; font-size: 9pt; text-align: justify; }
+    .termo-compromisso h2 { margin: 0 0 8px 0; font-size: 9.5pt; text-transform: uppercase; }
+    .termo-compromisso p { line-height: 1.4; margin: 0; font-size: 8.5pt; text-align: justify; }
 
     /* Assinatura */
-    .assinatura { margin-top: 60px; text-align: center; page-break-inside: avoid; }
-    #dataPorExtenso { margin-bottom: 40px; font-size: 10pt; text-align: right; }
-    .linha-assinatura { width: 400px; border-top: 1px solid #000; margin: 0 auto; }
-    #nomeAssinatura { font-size: 10pt; font-weight: bold; margin-top: 10px; text-transform: uppercase; }
+    .assinatura { margin-top: 40px; text-align: center; page-break-inside: avoid; }
+    #dataPorExtenso { margin-bottom: 25px; font-size: 9pt; text-align: right; }
+    .linha-assinatura { width: 350px; border-top: 1px solid #000; margin: 0 auto; }
+    #nomeAssinatura { font-size: 9pt; font-weight: bold; margin-top: 8px; text-transform: uppercase; }
 
     /* Forçar cores em preto para legibilidade na impressão */
     * { color: #000 !important; box-sizing: border-box; }
