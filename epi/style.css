@@ -183,7 +183,7 @@ thead th:nth-child(4) { width: 25%; }
         padding: 4px;
         border: 1px solid #000;
     }
-    th { background-color: #eee !important; -webkit-print-color-adjust: exact; font-weight: bold; text-align: center; }
+    th { background-color: #eee !important; print-color-adjust: exact; -webkit-print-color-adjust: exact; font-weight: bold; text-align: center; }
     
     thead th:nth-child(1) { width: 14%; }
     thead th:nth-child(2) { width: 48%; }
