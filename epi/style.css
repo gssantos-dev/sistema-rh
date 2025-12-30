@@ -1,4 +1,4 @@
-/* style.css - Versão Final: Layout Flexível com Assinatura no Rodapé */
+/* style.css - Versão Final: Compacta e Garantida em 1 Página */
 
 /* --- Estilos Gerais (Visualização em Tela) --- */
 body {
@@ -15,7 +15,7 @@ body {
 /* Painel de Controle (não impresso) */
 #painel-controle {
     background-color: #fff;
-    padding: 15px 25px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     margin-bottom: 20px;
@@ -24,51 +24,50 @@ body {
     box-sizing: border-box;
     text-align: center;
 }
-#painel-controle h1 { margin-top: 0; color: #007bff; font-size: 1.5rem; }
-.controles-container { display: flex; justify-content: center; align-items: flex-end; gap: 15px; flex-wrap: wrap; }
+#painel-controle h1 { margin: 0 0 10px 0; color: #007bff; font-size: 1.4rem; }
+.controles-container { display: flex; justify-content: center; align-items: flex-end; gap: 10px; flex-wrap: wrap; }
 .controle-item { text-align: left; }
-.controle-item label { display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold; }
-.controle-item select, .controle-item input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
-button#btnImprimir { padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 1rem; }
+.controle-item label { display: block; font-size: 0.85rem; margin-bottom: 4px; font-weight: bold; }
+.controle-item select, .controle-item input { padding: 6px; border: 1px solid #ccc; border-radius: 4px; }
+button#btnImprimir { padding: 8px 16px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
 button#btnImprimir:hover { background-color: #218838; }
 
 /* A Folha de Papel (Container Principal) */
 #ficha-container {
     width: 210mm;
-    min-height: 297mm; /* Altura A4 */
+    min-height: 297mm; /* Visualização em tela */
     background-color: #fff;
-    padding: 15mm;
+    padding: 10mm 15mm; /* Margens laterais maiores para estética */
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     box-sizing: border-box;
     position: relative;
-    
-    /* MÁGICA DO FLEXBOX PARA EMPURRAR O RODAPÉ */
-    display: flex;
-    flex-direction: column;
+    display: block; /* Voltamos ao bloco normal, sem flexbox forçado */
 }
 
 /* --- Elementos Internos --- */
 .ficha-header {
     text-align: center;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
 }
-.ficha-header h1 { font-size: 14pt; margin: 0; text-transform: uppercase; color: #000; }
-.ficha-header p { margin: 5px 0 0 0; font-size: 9pt; color: #555; }
+.ficha-header h1 { font-size: 13pt; margin: 0; text-transform: uppercase; color: #000; letter-spacing: 0.5px; }
+.ficha-header p { margin: 4px 0 0 0; font-size: 8pt; color: #444; }
 
 /* Informações */
 .info-empresa, .info-funcionario {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
 }
-.campo-info { margin-bottom: 5px; }
-.campo-info label { display: block; font-size: 8pt; font-weight: bold; text-transform: uppercase; color: #666; }
-.campo-info span { display: block; font-size: 10pt; font-weight: 600; color: #000; margin-top: 2px; }
+.campo-info { margin-bottom: 4px; }
+.campo-info label { display: block; font-size: 7.5pt; font-weight: bold; text-transform: uppercase; color: #555; }
+.campo-info span { display: block; font-size: 9.5pt; font-weight: 600; color: #000; margin-top: 1px; }
+
+/* Larguras ajustadas */
 .campo-info.full-width { width: 100%; }
 .campo-info.nome { width: 55%; }
 .campo-info.cpf { width: 40%; }
@@ -76,48 +75,63 @@ button#btnImprimir:hover { background-color: #218838; }
 .campo-info.setor { width: 30%; }
 .campo-info.admissao { width: 25%; }
 
-/* Tabela */
-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; font-size: 9pt; }
-thead th { background-color: #f2f2f2; border-top: 2px solid #000; border-bottom: 2px solid #000; padding: 6px 4px; text-align: left; text-transform: uppercase; font-size: 8pt; }
-tbody td { padding: 5px 4px; border-bottom: 1px solid #ddd; vertical-align: middle; }
+/* Tabela Otimizada */
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-bottom: 10px; 
+    font-size: 8.5pt; /* Fonte levemente reduzida para garantir espaço */
+}
+thead th { 
+    background-color: #f0f0f0; 
+    border-top: 1px solid #000; 
+    border-bottom: 1px solid #000; 
+    padding: 5px 2px; 
+    text-align: left; 
+    text-transform: uppercase; 
+    font-size: 7.5pt;
+    font-weight: bold;
+}
+tbody td { 
+    padding: 3px 2px; /* Padding Reduzido: O segredo para caber muitas linhas */
+    border-bottom: 1px solid #ddd; 
+    vertical-align: middle; 
+}
 th:nth-child(1), td:nth-child(1) { width: 12%; text-align: center; }
-th:nth-child(2), td:nth-child(2) { width: 53%; }
+th:nth-child(2), td:nth-child(2) { width: 55%; }
 th:nth-child(3), td:nth-child(3) { width: 10%; text-align: center; }
-th:nth-child(4), td:nth-child(4) { width: 25%; }
+th:nth-child(4), td:nth-child(4) { width: 23%; }
 
-/* Termo */
+/* Termo Compacto */
 .termo-compromisso {
     background-color: #f9f9f9;
-    padding: 12px;
+    padding: 8px;
     border: 1px solid #eee;
-    margin-top: 10px;
-    /* Adicionamos margem inferior para separar da assinatura se a página estiver cheia */
-    margin-bottom: 20px; 
+    margin-top: 8px;
+    margin-bottom: 15px; 
 }
-.termo-compromisso h2 { font-size: 9pt; margin: 0 0 5px 0; text-transform: uppercase; text-align: center; }
-.termo-compromisso p { font-size: 8pt; text-align: justify; margin: 0; line-height: 1.4; }
+.termo-compromisso h2 { font-size: 8pt; margin: 0 0 3px 0; text-transform: uppercase; text-align: center; font-weight: bold; }
+.termo-compromisso p { font-size: 7.5pt; text-align: justify; margin: 0; line-height: 1.25; color: #333; }
 
-/* Assinatura (Rodapé Flexível) */
+/* Assinatura */
 .assinatura {
     text-align: center;
-    /* O SEGREDO: margin-top: auto empurra este bloco para o final do container pai */
-    margin-top: auto; 
-    padding-top: 10px;
+    margin-top: 20px; /* Margem fixa e segura */
+    page-break-inside: avoid;
 }
-#dataPorExtenso { margin-bottom: 30px; font-size: 10pt; text-align: right; }
+#dataPorExtenso { margin-bottom: 25px; font-size: 9pt; text-align: right; }
 .linha-assinatura { 
-    width: 60%; /* Linha mais larga para ficar mais elegante */
-    max-width: 400px;
+    width: 50%; 
     border-top: 1px solid #000; 
     margin: 0 auto; 
 }
-#nomeAssinatura { display: block; margin-top: 8px; font-weight: bold; text-transform: uppercase; font-size: 10pt; }
+#nomeAssinatura { display: block; margin-top: 4px; font-weight: bold; text-transform: uppercase; font-size: 9pt; }
 
 /* --- REGRAS DE IMPRESSÃO --- */
 @media print {
     @page {
         size: A4 portrait;
-        margin: 10mm; 
+        margin: 7mm 10mm; /* Margens superiores/inferiores mais apertadas (7mm) */
     }
     
     body {
@@ -131,18 +145,17 @@ th:nth-child(4), td:nth-child(4) { width: 25%; }
 
     #ficha-container {
         width: 100%;
-        /* Forçamos a altura para ocupar a página impressa, permitindo o efeito de rodapé */
-        height: 275mm; 
+        height: auto; /* Altura automática - CRUCIAL para não gerar página em branco */
+        min-height: 0;
         margin: 0;
         padding: 0;
         box-shadow: none;
         border: none;
-        display: flex;
-        flex-direction: column;
+        display: block;
     }
 
-    /* Ajustes finos para impressão */
-    .termo-compromisso { border: none; background-color: transparent !important; padding: 0; }
+    .termo-compromisso { border: none; background: none !important; padding: 0; }
     
+    /* Assegura preto absoluto */
     * { color: #000 !important; }
 }
