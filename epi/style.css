@@ -1,226 +1,194 @@
-/* style.css - Versão Final: Layout Moderno + Impressão Compacta A4 */
+/* style.css - Versão Otimizada: Preenchimento Total A4 e Layout Moderno */
 
-/* Estilos Gerais */
+/* --- Estilos Gerais (Tela) --- */
 body {
     font-family: 'Roboto', Arial, sans-serif;
     background-color: #f4f7f9;
-    color: #444;
+    color: #333;
     margin: 0;
-    font-size: 11pt;
+    font-size: 12pt; /* Fonte base um pouco maior para leitura em tela */
 }
 
 /* Painel de Controle (não impresso) */
 #painel-controle {
     background-color: #fff;
-    padding: 15px;
+    padding: 20px;
     border-bottom: 1px solid #dee2e6;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-#painel-controle h1 { font-size: 1.2em; text-align: center; margin: 0 0 15px 0; color: #333; font-weight: 500;}
-.controles-container {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 .controle-item { display: flex; flex-direction: column; }
-.controle-item label { margin-bottom: 5px; font-size: 0.9em; color: #555;}
-.controle-item select, .controle-item input, #painel-controle button { padding: 8px; font-size: 1em; border: 1px solid #ccc; border-radius: 4px; }
-#painel-controle button { background-color: #007bff; color: white; border-color: #007bff; cursor: pointer;}
+.controle-item label { margin-bottom: 5px; font-weight: 500; color: #555; }
+.controle-item select, .controle-item input, #painel-controle button { 
+    padding: 10px; font-size: 1rem; border: 1px solid #ccc; border-radius: 6px; 
+}
+#painel-controle button { 
+    background-color: #007bff; color: white; border-color: #007bff; 
+    cursor: pointer; font-weight: bold; transition: background 0.2s;
+}
+#painel-controle button:hover { background-color: #0056b3; }
 
-/* Container da Ficha (versão de tela, espaçosa e moderna) */
+/* Container da Ficha na Tela (Simula a folha A4) */
 #ficha-container {
     width: 210mm;
     min-height: 297mm;
-    margin: 30px auto;
+    margin: 40px auto;
     background-color: #fff;
-    padding: 20mm;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 20mm; /* Margens internas padrão A4 */
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
     box-sizing: border-box;
+    position: relative;
 }
 
-/* --- Estilos do Layout Moderno para a Tela --- */
+/* --- Elementos da Ficha --- */
+
+/* Cabeçalho */
 .ficha-header {
     text-align: center;
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #007bff;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #333;
+    padding-bottom: 10px;
 }
-.ficha-header h1 { font-size: 1.4em; margin: 0; font-weight: 700; color: #333; }
-.ficha-header p { margin: 8px 0 0 0; font-size: 0.8em; color: #666; }
+.ficha-header h1 { 
+    font-size: 18pt; margin: 0; text-transform: uppercase; letter-spacing: 1px; color: #000;
+}
+.ficha-header p { 
+    margin: 5px 0 0 0; font-size: 10pt; color: #555; 
+}
 
+/* Blocos de Informação (Grid System) */
 .info-empresa, .info-funcionario {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 25px;
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
-    border-radius: 4px;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
+
 .campo-info {
-    padding: 12px;
+    margin-bottom: 15px;
     box-sizing: border-box;
 }
-.campo-info label { font-size: 0.8em; color: #666; display: block; }
-.campo-info span { font-weight: 500; min-height: 1.2em; display: block; color: #333; }
-.campo-info.full-width { flex-basis: 100%;}
-.campo-info.nome { flex-basis: 50%; }
-.campo-info.cpf { flex-basis: 50%;}
-.campo-info.funcao { flex-basis: 34%;}
-.campo-info.setor { flex-basis: 33%;}
-.campo-info.admissao { flex-basis: 33%;}
 
+/* Distribuição das colunas */
+.campo-info.full-width { flex-basis: 100%; }
+.campo-info.nome { flex-basis: 60%; }
+.campo-info.cpf { flex-basis: 35%; }
+.campo-info.funcao { flex-basis: 40%; }
+.campo-info.setor { flex-basis: 30%; }
+.campo-info.admissao { flex-basis: 25%; }
+
+.campo-info label { 
+    display: block; font-size: 9pt; font-weight: bold; 
+    text-transform: uppercase; color: #666; margin-bottom: 3px;
+}
+.campo-info span { 
+    display: block; font-size: 12pt; font-weight: 500; color: #000;
+    border-bottom: 1px solid #ddd; padding-bottom: 2px; min-height: 18px;
+}
+
+/* Tabela */
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 25px;
+    font-size: 10pt;
 }
 th {
-    padding: 12px;
-    font-weight: 500;
+    background-color: #f0f0f0;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 8px;
     text-align: left;
-    font-size: 0.8em;
-    color: #555;
     text-transform: uppercase;
-    border-bottom: 2px solid #dee2e6;
+    font-size: 9pt;
 }
 td {
-    padding: 12px;
-    border-bottom: 1px solid #f1f3f5;
-    font-size: 0.9em;
+    padding: 8px 5px; /* Espaçamento vertical para "encher" a folha */
+    border-bottom: 1px solid #ddd;
     vertical-align: middle;
 }
-tbody tr:last-child td { border-bottom: none; }
-thead th:nth-child(1) { width: 15%; }
-thead th:nth-child(2) { width: 50%; }
-thead th:nth-child(3) { width: 10%; }
-thead th:nth-child(4) { width: 25%; }
 
+/* Larguras das colunas da tabela */
+th:nth-child(1), td:nth-child(1) { width: 12%; text-align: center; } /* Data */
+th:nth-child(2), td:nth-child(2) { width: 50%; } /* Nome EPI */
+th:nth-child(3), td:nth-child(3) { width: 10%; text-align: center; } /* CA */
+th:nth-child(4), td:nth-child(4) { width: 28%; } /* Assinatura */
+
+/* Termo de Compromisso */
 .termo-compromisso {
-    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 5px solid #333;
+    margin-top: 20px;
 }
 .termo-compromisso h2 {
-    text-align: center;
-    font-size: 1.1em;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-weight: 500;
+    font-size: 11pt; margin: 0 0 8px 0; text-transform: uppercase;
 }
 .termo-compromisso p {
-    font-size: 0.9em;
-    text-align: justify;
-    line-height: 1.6;
-    margin: 0 0 10px 0;
-    color: #555;
+    font-size: 9pt; text-align: justify; line-height: 1.4; margin: 0;
 }
 
+/* Assinatura */
 .assinatura {
-    margin-top: 80px;
+    margin-top: 50px;
     text-align: center;
+    page-break-inside: avoid; /* Evita que a assinatura vá sozinha para outra página */
 }
-#dataPorExtenso { margin-bottom: 10px; font-size: 0.9em; }
+#dataPorExtenso { 
+    margin-bottom: 30px; font-size: 11pt; text-align: right; 
+}
 .linha-assinatura {
-    width: 300px;
+    width: 350px;
+    border-top: 1px solid #000;
     margin: 0 auto;
-    border-top: 1px solid #999;
 }
-#nomeAssinatura { font-size: 0.9em; font-weight: 500; margin-top: 8px; }
+#nomeAssinatura {
+    display: block;
+    margin-top: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 11pt;
+}
 
-/* --- REGRAS DE IMPRESSÃO OTIMIZADAS PARA A4 --- */
-@page { size: A4 portrait; margin: 10mm; }
+/* --- REGRAS ESPECÍFICAS DE IMPRESSÃO --- */
 @media print {
-    /* Página e corpo */
-    html, body { background-color: #fff; margin: 0; color: #000; font-family: 'Roboto', Arial, sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 8.5pt; } /* Fonte base ligeiramente menor */
-    #painel-controle { display: none; }
-    ::-webkit-scrollbar { display: none; }
+    @page {
+        size: A4 portrait;
+        margin: 15mm 15mm 15mm 15mm; /* Margens equilibradas */
+    }
 
-    /* Container: Limpo e sem sombras, ocupa 100% da largura disponível */
+    body {
+        background-color: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    #painel-controle, .menu-principal { display: none !important; }
+
     #ficha-container {
         width: 100%;
         margin: 0;
         padding: 0;
-        border: none;
         box-shadow: none;
-        display: block;
-        font-size: 8.5pt; /* Fonte base para impressão */
-    }
-
-    /* Cabeçalho Profissional */
-    .ficha-header { margin-bottom: 15px; padding-bottom: 6px; border-bottom: 2px solid #333; text-align: center; }
-    .ficha-header h1 { font-size: 14pt; text-transform: uppercase; letter-spacing: 1px; margin: 0; }
-    .ficha-header p { font-size: 8.5pt; margin-top: 3px; color: #555; }
-
-    /* Layout de Informações: Limpo, sem grades pesadas */
-    .info-empresa, .info-funcionario {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 10px;
         border: none;
-        background: transparent;
-        padding: 0;
+        /* Garante que o container ocupe a altura necessária */
+        min-height: auto; 
     }
-    .campo-info {
-        margin-bottom: 8px;
-        padding: 0 6px 0 0;
-        border: none;
-    }
+
+    /* Aumenta a legibilidade na impressão */
+    .campo-info span { border-bottom: 1px solid #aaa; }
     
-    .campo-info.full-width { flex-basis: 100%; }
-    .campo-info.nome { flex-basis: 55%; }
-    .campo-info.cpf { flex-basis: 40%; margin-right: 0; } /* Ajuste para garantir que o CPF não quebre linha */
-    .campo-info.funcao { flex-basis: 40%; }
-    .campo-info.setor { flex-basis: 30%; }
-    .campo-info.admissao { flex-basis: 25%; }
-
-    .campo-info label { 
-        display: block; font-size: 8pt; text-transform: uppercase; 
-        color: #666; font-weight: 600; margin-bottom: 2px; 
-    }
-    .campo-info span { 
-        display: block; font-size: 9.5pt; color: #000; 
-        border-bottom: 1px solid #eee; padding-bottom: 1px; 
-    }
-
-    /* Tabela Minimalista */
-    table { width: 100%; border-collapse: collapse; font-size: 8pt; margin-bottom: 10px; border: none; }
-    th, td {
-        padding: 4px;
-        border-bottom: 1px solid #ddd;
-    }
-    th { 
-        background-color: #f4f4f4 !important; 
-        border-top: 2px solid #000; border-bottom: 2px solid #000; 
-        font-weight: bold; text-transform: uppercase; text-align: left; 
-    }
-    /* Remover bordas laterais */
-    th, td { border-left: none; border-right: none; }
+    /* Ajuste fino para a tabela na impressão */
+    table { font-size: 10pt; }
+    th { background-color: #e0e0e0 !important; -webkit-print-color-adjust: exact; }
     
-    thead th:nth-child(1) { width: 10%; text-align: center; }
-    thead th:nth-child(2) { width: 48%; }
-    thead th:nth-child(3) { width: 15%; text-align: center; }
-    thead th:nth-child(4) { width: 25%; }
-    
-    tbody td:nth-child(1) { text-align: center; color: #666; }
-    tbody td:nth-child(3) { text-align: center; }
+    /* Aumenta o espaçamento das linhas da tabela APENAS na impressão
+       para garantir que ocupe a página toda se houver poucos itens */
+    td { padding: 10px 5px; } 
 
-    /* Termo de Compromisso */
-    .termo-compromisso { 
-        margin-top: 15px; padding: 8px; 
-        background-color: #f9f9f9 !important; 
-        border-left: 4px solid #333; 
-        page-break-inside: avoid; 
-    }
-    .termo-compromisso h2 { margin: 0 0 5px 0; font-size: 9pt; text-transform: uppercase; }
-    .termo-compromisso p { line-height: 1.3; margin: 0; font-size: 8pt; text-align: justify; }
-
-    /* Assinatura */
-    .assinatura { margin-top: 30px; text-align: center; page-break-inside: avoid; }
-    #dataPorExtenso { margin-bottom: 20px; font-size: 8.5pt; text-align: right; }
-    .linha-assinatura { width: 300px; border-top: 1px solid #000; margin: 0 auto; }
-    #nomeAssinatura { font-size: 8.5pt; font-weight: bold; margin-top: 5px; text-transform: uppercase; }
-
-    /* Forçar cores em preto para legibilidade na impressão */
-    * { color: #000 !important; box-sizing: border-box; }
+    .termo-compromisso { background-color: #f5f5f5 !important; }
 }
