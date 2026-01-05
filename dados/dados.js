@@ -121,5 +121,19 @@ const funcionarios = [
     departamento: "Limpeza",
     cpf: "102.285.838-61",
     dataAdmissao: "15/07/2023"
+  },
+  { id: 15,
+    nome: "Blendon Aparecido Lima Delprat",
+    cargo: "Montador de Contêiner",
+    departamento: "Transporte",
+    cpf: "901.854.238-50",
+    dataAdmissao: "07/01/2026"
+  },
+  { id: 16,
+    nome: "João dos Santos Pereira  ",
+    cargo: "Montador de Contêiner",
+    departamento: "Transporte",
+    cpf: "445.011.758-18",
+    dataAdmissao: "07/01/2026"
   }
 ];
