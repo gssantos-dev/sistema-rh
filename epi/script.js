@@ -9,6 +9,7 @@ window.onload = function() {
     const cargoEl = document.getElementById('cargoFuncionario');
     const cpfEl = document.getElementById('cpfFuncionario');
     const setorEl = document.getElementById('setorFuncionario');
+    const campoSetor = document.querySelector('.campo-info.setor');
     const admissaoEl = document.getElementById('admissaoFuncionario');
     const corpoTabela = document.getElementById('corpoTabelaEPI');
     const dataPorExtensoEl = document.getElementById('dataPorExtenso');
@@ -84,6 +85,18 @@ window.onload = function() {
             cargoEl.textContent = funcionarioSelecionado.cargo;
             cpfEl.textContent = funcionarioSelecionado.cpf;
             setorEl.textContent = funcionarioSelecionado.departamento;
+
+            // Oculta o campo 'Setor' na ficha quando o departamento for 'Limpeza'
+            if (campoSetor) {
+                if (funcionarioSelecionado.departamento === 'Limpeza') {
+                    campoSetor.style.display = 'none';
+                    campoSetor.setAttribute('aria-hidden', 'true');
+                } else {
+                    campoSetor.style.display = '';
+                    campoSetor.setAttribute('aria-hidden', 'false');
+                }
+            }
+
             admissaoEl.textContent = funcionarioSelecionado.dataAdmissao;
             nomeAssinaturaEl.textContent = funcionarioSelecionado.nome;
         } else {
@@ -91,6 +104,7 @@ window.onload = function() {
             cargoEl.textContent = '';
             cpfEl.textContent = '';
             setorEl.textContent = '';
+            if (campoSetor) { campoSetor.style.display = ''; campoSetor.setAttribute('aria-hidden','false'); }
             admissaoEl.textContent = '';
             nomeAssinaturaEl.textContent = '';
         }

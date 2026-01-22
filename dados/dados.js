@@ -16,7 +16,7 @@ const listaDeEPIs = [
   { id: 13, nome: "ÓCULOS DE SOBREPOR", ca: "45.463" },
   { id: 14, nome: "PROTETOR AURICULAR", ca: "14.235" },
   { id: 15, nome: "PROTETOR SOLAR", ca: "" },
-  { id: 16, nome: "RESPIRADOR 3M PARA VAPORES ORGANICOS COM CARTUCHO E FILTROS", ca: "4.115" },
+  { id: 16, nome: "RESPIRADOR 3M PARA VAPORES ORGANICOS COM CARTUCHOS E FILTROS", ca: "4.115" },
   { id: 17, nome: "MANGUITO MANGOTE SEGUNDA PELE UV", ca: "" },
   { id: 18, nome: "CINTO LOMBAR ABDOMINAL", ca: "" }
 ];
