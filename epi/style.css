@@ -38,17 +38,32 @@ body {
 .controle-item { text-align: left; }
 .controle-item label { display: block; font-size: 0.9rem; margin-bottom: 5px; font-weight: bold; }
 .controle-item select, .controle-item input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
-button#btnImprimir {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
+/* Botão de impressão como ícone */
+.btn-icon {
+    background: transparent;
     border: none;
-    border-radius: 4px;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    font-weight: bold;
-    font-size: 1rem;
+    border-radius: 6px;
+    color: #28a745;
+    transition: background-color .12s ease, transform .06s ease;
 }
-button#btnImprimir:hover { background-color: #218838; }
+.btn-icon svg { width: 20px; height: 20px; fill: currentColor; display: block; }
+.btn-icon:hover { background-color: rgba(0,0,0,0.04); }
+.btn-icon:active { transform: translateY(1px); }
+
+/* Texto acessível escondido visualmente */
+.sr-only {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0);
+    white-space: nowrap; border: 0;
+}
 
 /* A Folha de Papel (Simulação na Tela) */
 #ficha-container {
