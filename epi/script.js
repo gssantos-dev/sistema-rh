@@ -27,13 +27,25 @@ window.onload = function() {
     }
     
     // 2. Gera as linhas da tabela de EPIs com a data selecionada
-    function gerarTabelaEPIs(dataString) {
+    // Aplica regras por departamento para ocultar certos EPIs
+    const regrasPorDepartamento = {
+        'Transporte': [10],
+        'Limpeza': [1, 10, 11],
+        'Manutenção': [],
+        'Administração': []
+    };
+
+    function gerarTabelaEPIs(dataString, departamento) {
         corpoTabela.innerHTML = '';
         if (!dataString) return;
         const [ano, mes, dia] = dataString.split('-');
         const dataFormatada = `${dia}/${mes}/${ano}`;
+        const excluidos = regrasPorDepartamento[departamento] || [];
 
         listaDeEPIs.forEach(epi => {
+            // pulamos EPIs que estão excluídos para o departamento
+            if (excluidos.includes(epi.id)) return;
+
             const linha = document.createElement('tr');
             const celulaData = document.createElement('td');
             const celulaNome = document.createElement('td');
@@ -51,6 +63,17 @@ window.onload = function() {
             
             corpoTabela.appendChild(linha);
         });
+
+        // Se nada foi adicionado à tabela, exibimos uma linha informando
+        if (corpoTabela.children.length === 0) {
+            const linhaVazia = document.createElement('tr');
+            const td = document.createElement('td');
+            td.colSpan = 4;
+            td.textContent = 'Nenhum EPI aplicável para este departamento.';
+            td.style.textAlign = 'center';
+            linhaVazia.appendChild(td);
+            corpoTabela.appendChild(linhaVazia);
+        }
     }
 
     // 3. Atualiza os dados do funcionário
@@ -80,8 +103,11 @@ window.onload = function() {
         const idFuncionario = parseInt(selectFuncionario.value);
         const dataSelecionada = dataInput.value;
 
+        const funcionarioSelecionado = funcionarios.find(func => func.id === idFuncionario);
+        const departamento = funcionarioSelecionado ? funcionarioSelecionado.departamento : null;
+
         atualizarInfoFuncionario(idFuncionario);
-        gerarTabelaEPIs(dataSelecionada);
+        gerarTabelaEPIs(dataSelecionada, departamento);
         gerarDataPorExtenso(dataSelecionada);
     }
     
