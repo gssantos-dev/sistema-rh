@@ -54,13 +54,6 @@ const funcionarios = [
     cpf: "376.684.968-90",
     dataAdmissao: "12/05/2025"
   },
-  { id: 5,
-    nome: "Gustavo França de Jesus",
-    cargo: "Motorista",
-    departamento: "Transporte",
-    cpf: "473.679.108-09",
-    dataAdmissao: "01/12/2025"
-  },
   { id: 6,
     nome: "Givaldo Pantaleão Ribeiro dos Santos",
     cargo: "Montador de Contêiner",
