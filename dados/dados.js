@@ -109,5 +109,13 @@ const funcionarios = [
     departamento: "Transporte",
     cpf: "445.011.758-18",
     dataAdmissao: "07/01/2026"
+  },
+  { id: 13,
+    nome: "Lael Ramos Negrão",
+    cargo: "Motorista",
+    departamento: "Transporte",
+    cpf: "020.968.852-13",
+    dataAdmissao: "10/02/2026"
   }
+
 ];
